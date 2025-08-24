@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/WalletAdapter.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/Feed.tsx","./src/components/Header.tsx","./src/components/Sidebar.tsx","./src/components/TweetCard.tsx"],"errors":true,"version":"5.6.2"}

@@ -1,0 +1,154 @@
+{
+  "address": "GovjvknKC9sPQ5t7jS1PzZ2Eu6kKmFf3HJghUnTKaS6P",
+  "metadata": {
+    "name": "solana_twitter",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "delete_tweet",
+      "discriminator": [
+        58,
+        240,
+        206,
+        92,
+        160,
+        186,
+        211,
+        87
+      ],
+      "accounts": [
+        {
+          "name": "tweet_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  119,
+                  101,
+                  101,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "sender"
+              }
+            ]
+          }
+        },
+        {
+          "name": "sender",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "send_tweet",
+      "discriminator": [
+        179,
+        213,
+        79,
+        165,
+        123,
+        247,
+        82,
+        109
+      ],
+      "accounts": [
+        {
+          "name": "tweet_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  119,
+                  101,
+                  101,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "sender"
+              }
+            ]
+          }
+        },
+        {
+          "name": "sender",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "content",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Tweet",
+      "discriminator": [
+        229,
+        13,
+        110,
+        58,
+        118,
+        6,
+        20,
+        79
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "ContentTooLong",
+      "msg": "The tweet is too long"
+    }
+  ],
+  "types": [
+    {
+      "name": "Tweet",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "author",
+            "type": "pubkey"
+          },
+          {
+            "name": "content",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    }
+  ]
+}
